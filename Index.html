@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sửa chữa điện nước tại nhà - Có mặt sau 30 phút</title>
+  <meta name="description" content="Dịch vụ sửa chữa điện nước tại nhà nhanh chóng, uy tín, giá hợp lý. Gọi ngay: 093.8.880.171" />
+  <style>
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,Segoe UI,Roboto,Arial;color:#111;background:#fafafa}
+    a{text-decoration:none;color:inherit}
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+    header{display:flex;justify-content:space-between;align-items:center;padding:12px 0}
+    .brand{display:flex;align-items:center;gap:8px;font-weight:700}
+    .brand img{height:44px}
+    nav{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{padding:12px 18px;border-radius:8px;border:0;font-weight:600;cursor:pointer}
+    .btn-primary{background:#FF6A00;color:#fff}
+    .btn-ghost{background:transparent;border:1px solid #ddd}
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 400px;gap:28px;align-items:center;padding:20px 0}
+    h1{font-size:clamp(24px,4vw,36px);margin:0 0 12px;color:#111}
+    p.lead{color:#444;margin:0 0 18px}
+    .trust{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+    .trust-item{background:#fff;border-radius:8px;padding:8px 12px;font-size:14px;box-shadow:0 1px 4px rgba(0,0,0,0.06)}
+    /* Form */
+    .card{background:#fff;padding:18px;border-radius:10px;box-shadow:0 8px 20px rgba(0,0,0,0.08)}
+    label{font-size:14px;margin-bottom:4px;display:block;color:#333}
+    input,textarea{width:100%;padding:10px;border-radius:6px;border:1px solid #ccc;margin-bottom:10px}
+    /* Features */
+    .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:24px}
+    .feature{background:#fff;padding:16px;border-radius:10px;box-shadow:0 4px 10px rgba(0,0,0,0.05)}
+    footer{margin-top:32px;padding:20px 0;border-top:1px solid #eee;color:#666;font-size:14px}
+    @media(max-width:900px){.hero{grid-template-columns:1fr}.hero img{width:100%;border-radius:10px}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <img src="https://cdn-icons-png.flaticon.com/512/3104/3104865.png" alt="Logo">
+        <span>Điện Nước 24/7</span>
+      </div>
+      <nav>
+        <a href="#features">Dịch vụ</a>
+        <a href="#banggia">Bảng giá</a>
+        <a href="#lienhe" class="btn btn-ghost">Liên hệ</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div>
+        <h1>Sửa chữa điện nước tại nhà <span style="color:#FF6A00">có mặt sau 30 phút</span></h1>
+        <p class="lead">Thợ chuyên nghiệp, phục vụ 24/7 – khắc phục nhanh mọi sự cố điện, nước. Giá rõ ràng, bảo hành chu đáo.</p>
+
+        <div class="trust">
+          <div class="trust-item">⚡ Hơn 500 khách hàng hài lòng</div>
+          <div class="trust-item">🛠️ Có mặt nhanh trong 30 phút</div>
+          <div class="trust-item">💰 Báo giá minh bạch</div>
+        </div>
+
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <button class="btn btn-primary" onclick="scrollToForm()">Đặt lịch sửa ngay</button>
+          <a href="tel:0909888777" class="btn btn-ghost">📞 Gọi: 0909 888 777</a>
+        </div>
+      </div>
+
+      <aside>
+        <div class="card" id="form-card">
+          <h3 style="margin:0 0 10px">Đặt lịch sửa chữa nhanh</h3>
+          <p style="margin:0 0 12px;color:#666;font-size:14px">Điền thông tin, chúng tôi sẽ gọi xác nhận ngay.</p>
+
+          <form id="leadForm" onsubmit="handleSubmit(event)">
+            <label for="name">Họ & tên</label>
+            <input id="name" name="name" required placeholder="Nguyễn Văn A">
+
+            <label for="phone">Số điện thoại</label>
+            <input id="phone" name="phone" required placeholder="0xxxxxxxxx">
+
+            <label for="note">Sự cố cần sửa</label>
+            <textarea id="note" name="note" rows="3" placeholder="Ví dụ: chập điện, rò rỉ nước..."></textarea>
+
+            <button type="submit" class="btn btn-primary" style="width:100%">Gửi yêu cầu</button>
+          </form>
+          <p id="formMsg" style="display:none;font-size:14px;color:green;margin-top:10px">✅ Cảm ơn! Chúng tôi sẽ liên hệ ngay.</p>
+        </div>
+      </aside>
+    </section>
+
+    <section id="features">
+      <h2>Dịch vụ của chúng tôi</h2>
+      <div class="features">
+        <div class="feature"><strong>⚡ Sửa điện</strong><div>Chập điện, mất nguồn, thay CB, công tắc, ổ cắm...</div></div>
+        <div class="feature"><strong>🚰 Sửa nước</strong><div>Rò rỉ ống, nghẹt lavabo, bồn cầu, thay vòi sen...</div></div>
+        <div class="feature"><strong>💡 Lắp đặt mới</strong><div>Đèn, quạt, máy bơm, bình nóng lạnh, ống nước mới.</div></div>
+        <div class="feature"><strong>🧰 Bảo trì định kỳ</strong><div>Kiểm tra hệ thống điện nước cho gia đình, văn phòng.</div></div>
+      </div>
+    </section>
+
+    <section id="banggia" style="margin-top:30px">
+      <h2>Bảng giá tham khảo</h2>
+      <div class="features">
+        <div class="feature"><strong>Sửa điện nhẹ</strong><div>Chỉ từ 80.000đ/lần</div></div>
+        <div class="feature"><strong>Sửa nước nhẹ</strong><div>Chỉ từ 90.000đ/lần</div></div>
+        <div class="feature"><strong>Lắp đặt thiết bị</strong><div>Thỏa thuận sau khi khảo sát</div></div>
+      </div>
+      <p style="color:#666;margin-top:8px">* Giá có thể thay đổi tùy vị trí & tình trạng. Báo giá miễn phí trước khi làm.</p>
+    </section>
+
+    <footer id="lienhe">
+      <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px">
+        <div>
+          <strong>Điện Nước 24/7</strong><br>
+          Hotline: <a href="tel:0909888777">0909 888 777</a><br>
+          Email: <a href="mailto:diennuoc247@gmail.com">diennuoc247@gmail.com</a><br>
+          Địa chỉ: Quận Bình Thạnh, TP.HCM
+        </div>
+        <div style="text-align:right">
+          © <span id="year"></span> Điện Nước 24/7. All rights reserved.
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    function scrollToForm(){
+      document.getElementById('form-card').scrollIntoView({behavior:'smooth',block:'center'});
+      document.getElementById('name').focus();
+    }
+    function handleSubmit(e){
+      e.preventDefault();
+      document.getElementById('leadForm').style.display='none';
+      document.getElementById('formMsg').style.display='block';
+      // TODO: Gửi dữ liệu tới Formspree hoặc API bạn
+    }
+  </script>
+</body>
+</html>
