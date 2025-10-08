@@ -1,238 +1,137 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Điện Nước 24/7 - Sửa chữa điện nước tại nhà</title>
   <style>
     body {
-      font-family: "Arial", sans-serif;
-      margin: 0;
-      background-color: #fff;
-      color: #222;
-      line-height: 1.6;
-    }
-    header {
-      background-color: #fff;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      padding: 15px 40px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    header h1 {
-      font-size: 20px;
-      color: #222;
-    }
-    nav a {
-      margin: 0 10px;
+      font-family: "Segoe UI", Tahoma, sans-serif;
+      background: linear-gradient(135deg, #e6f0ff, #ffffff);
       color: #333;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    nav a:hover {
-      color: #ff6600;
-    }
-
-    .hero {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      padding: 50px;
-      background-color: #f9f9f9;
-    }
-    .hero-text {
-      flex: 1;
-      min-width: 280px;
-    }
-    .hero-text h2 {
-      font-size: 32px;
-      color: #000;
-    }
-    .hero-text span {
-      color: #ff6600;
-    }
-    .hero-text ul {
-      list-style: none;
+      text-align: center;
+      margin: 0;
       padding: 0;
     }
-    .hero-text li {
-      margin: 8px 0;
-    }
-    .hero-text li::before {
-      content: "✔ ";
-      color: green;
-    }
-    .hero-buttons {
-      margin-top: 20px;
-    }
-    .hero-buttons a {
-      display: inline-block;
-      background-color: #ff6600;
-      color: #fff;
-      padding: 12px 20px;
-      border-radius: 6px;
-      text-decoration: none;
-      margin-right: 10px;
-    }
-    .hero-buttons a:hover {
-      background-color: #e85b00;
-    }
-    .hero img {
-      flex: 1;
-      max-width: 400px;
-      height: auto;
-      border-radius: 10px;
-    }
 
-    section {
-      padding: 40px 20px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    h3 {
-      text-align: center;
-      font-size: 26px;
-      margin-bottom: 30px;
-    }
-
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-
-    .service {
-      border: 1px solid #ddd;
-      padding: 20px;
-      border-radius: 10px;
-      background-color: #fff;
-      transition: 0.3s;
-    }
-
-    .service:hover {
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-
-    .contact {
-      text-align: center;
-      background-color: #fff7f0;
-      padding: 40px 20px;
-    }
-
-    .contact form {
-      max-width: 400px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    input, textarea {
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      width: 100%;
-    }
-
-    button {
-      background-color: #ff6600;
+    header {
+      background-color: #007bff;
       color: white;
-      border: none;
-      padding: 12px;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 16px;
+      padding: 20px 10px;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
     }
 
-    button:hover {
-      background-color: #e85b00;
+    h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+
+    img {
+      margin: 30px auto;
+      max-width: 90%;
+      width: 400px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .content {
+      padding: 20px;
+    }
+
+    .btn-call {
+      display: inline-block;
+      background-color: #28a745;
+      color: white;
+      padding: 12px 25px;
+      font-size: 1.1em;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .btn-call:hover {
+      background-color: #218838;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      line-height: 1.8;
     }
 
     footer {
-      text-align: center;
-      background-color: #333;
-      color: white;
-      padding: 15px;
       margin-top: 40px;
+      background-color: #f8f9fa;
+      padding: 15px;
+      font-size: 0.9em;
+      color: #555;
+      border-top: 1px solid #ddd;
     }
 
-    @media (max-width: 768px) {
-      .hero {
-        flex-direction: column;
-        text-align: center;
-      }
-      .hero img {
-        margin-top: 20px;
-      }
+    /* Nút nổi góc phải */
+    .floating-buttons {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      z-index: 100;
     }
+
+    .floating-buttons a {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 22px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      text-decoration: none;
+      transition: transform 0.2s ease;
+    }
+
+    .floating-buttons a:hover {
+      transform: scale(1.1);
+    }
+
+    .zalo { background-color: #0068ff; }
+    .messenger { background-color: #0084ff; }
+    .maps { background-color: #34a853; }
   </style>
 </head>
-<body>
 
+<body>
   <header>
-    <h1>💡 Điện Nước 24/7</h1>
-    <nav>
-      <a href="#dichvu">Dịch vụ</a>
-      <a href="#baogia">Bảng giá</a>
-      <a href="#lienhe">Liên hệ</a>
-    </nav>
+    <h1>🚨 Điện Nước 24/7</h1>
+    <p>Dịch vụ sửa chữa điện nước tại nhà – nhanh chóng, chuyên nghiệp, uy tín!</p>
   </header>
 
-  <section class="hero">
-    <div class="hero-text">
-      <h2>Sửa chữa <br> <span>điện nước tại nhà</span><br> có mặt sau <span>30 phút</span></h2>
-      <p>Thợ chuyên nghiệp, phục vụ 24/7 – khắc phục nhanh mọi sự cố điện nước. Giá rõ ràng, bảo hành chu đáo.</p>
-      <ul>
-        <li>Hơn 500 khách hàng hài lòng</li>
-        <li>Có mặt nhanh trong 30 phút</li>
-        <li>Báo giá minh bạch</li>
-      </ul>
-      <div class="hero-buttons">
-        <a href="#lienhe">Đặt lịch sửa ngay</a>
-        <a href="tel:0909888777">Gọi: 0909 888 777</a>
-      </div>
-    </div>
-    <img src="images/thodien.png" alt="Thợ sửa điện nước 24/7">
-  </section>
+  <div class="content">
+    <img src="images/thodien.png" alt="Thợ điện nước 24/7" />
+    <p>Chúng tôi chuyên nhận:</p>
+    <ul>
+      <li>🔌 Sửa chữa điện dân dụng, thay ổ cắm, công tắc</li>
+      <li>🚰 Sửa ống nước, vòi nước, máy bơm</li>
+      <li>💡 Lắp đặt đèn chiếu sáng, quạt trần, máy nước nóng</li>
+      <li>🧰 Dịch vụ tận nơi – có mặt chỉ sau 30 phút</li>
+    </ul>
 
-  <section id="dichvu">
-    <h3>Dịch vụ của chúng tôi</h3>
-    <div class="services">
-      <div class="service">
-        <h4>⚡ Sửa điện</h4>
-        <p>Chập điện, mất nguồn, thay CB, ổ cắm, công tắc...</p>
-      </div>
-      <div class="service">
-        <h4>🚿 Sửa nước</h4>
-        <p>Rò rỉ ống, nghẹt lavabo, bồn cầu, vòi sen...</p>
-      </div>
-      <div class="service">
-        <h4>🔧 Lắp đặt mới</h4>
-        <p>Đi dây điện, lắp ống nước, thiết bị gia dụng...</p>
-      </div>
-      <div class="service">
-        <h4>🧰 Bảo trì định kỳ</h4>
-        <p>Kiểm tra toàn bộ hệ thống điện nước định kỳ.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="lienhe" class="contact">
-    <h3>Đặt lịch sửa chữa nhanh</h3>
-    <form>
-      <input type="text" placeholder="Họ và tên" required>
-      <input type="tel" placeholder="Số điện thoại" required>
-      <textarea rows="3" placeholder="Mô tả sự cố cần sửa"></textarea>
-      <button type="submit">Gửi yêu cầu</button>
-    </form>
-  </section>
+    <a class="btn-call" href="tel:0909123456">📞 Gọi ngay: 0909 123 456</a>
+  </div>
 
   <footer>
-    © 2025 Điện Nước 24/7 - Dịch vụ sửa chữa điện nước tại nhà.  
+    &copy; 2025 Điện Nước 24/7 – Dịch vụ sửa chữa điện nước tại nhà.<br />
+    Liên hệ: <a href="mailto:hotro@diennuoc247.vn">hotro@diennuoc247.vn</a>
   </footer>
 
+  <!-- Nút nổi -->
+  <div class="floating-buttons">
+    <a class="zalo" href="https://zalo.me/0909123456" target="_blank" title="Chat Zalo">💬</a>
+    <a class="messenger" href="https://m.me/yourpage" target="_blank" title="Messenger">💭</a>
+    <a class="maps" href="https://maps.google.com/?q=Điện+Nước+24/7" target="_blank" title="Xem bản đồ">📍</a>
+  </div>
 </body>
 </html>
