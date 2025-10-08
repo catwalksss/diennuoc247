@@ -7,9 +7,8 @@
   <style>
     body {
       font-family: "Segoe UI", Tahoma, sans-serif;
-      background: linear-gradient(135deg, #e6f0ff, #ffffff);
+      background: #ffffff;
       color: #333;
-      text-align: center;
       margin: 0;
       padding: 0;
     }
@@ -17,25 +16,51 @@
     header {
       background-color: #007bff;
       color: white;
-      padding: 20px 10px;
+      padding: 20px;
+      text-align: center;
       box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
     }
 
-    h1 {
+    header h1 {
       margin: 0;
       font-size: 2em;
     }
 
-    img {
-      margin: 30px auto;
-      max-width: 90%;
-      width: 400px;
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .hero img {
+      max-width: 380px;
+      width: 90%;
       border-radius: 10px;
+      margin: 20px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
 
-    .content {
-      padding: 20px;
+    .hero-text {
+      max-width: 500px;
+      margin: 20px;
+    }
+
+    .hero-text h2 {
+      font-size: 1.8em;
+      color: #222;
+    }
+
+    .hero-text span {
+      color: #ff6600;
+      font-weight: bold;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      line-height: 1.8;
     }
 
     .btn-call {
@@ -53,10 +78,44 @@
       background-color: #218838;
     }
 
-    ul {
-      list-style: none;
-      padding: 0;
-      line-height: 1.8;
+    /* Form đặt lịch */
+    .form-container {
+      background-color: #f8f9fa;
+      padding: 25px;
+      border-radius: 10px;
+      max-width: 400px;
+      margin: 40px auto;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-container h3 {
+      margin-bottom: 15px;
+      color: #222;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1em;
+    }
+
+    .btn-submit {
+      width: 100%;
+      background-color: #ff6600;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      font-size: 1.1em;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .btn-submit:hover {
+      background-color: #e65c00;
     }
 
     footer {
@@ -66,6 +125,7 @@
       font-size: 0.9em;
       color: #555;
       border-top: 1px solid #ddd;
+      text-align: center;
     }
 
     /* Nút nổi góc phải */
@@ -105,21 +165,31 @@
 
 <body>
   <header>
-    <h1>🚨 Điện Nước 24/7</h1>
-    <p>Dịch vụ sửa chữa điện nước tại nhà – nhanh chóng, chuyên nghiệp, uy tín!</p>
+    <h1>⚡ Điện Nước 24/7 ⚡</h1>
+    <p>Dịch vụ sửa chữa điện nước tại nhà - có mặt sau <strong>30 phút!</strong></p>
   </header>
 
-  <div class="content">
+  <section class="hero">
+    <div class="hero-text">
+      <h2>Sửa chữa <span>điện nước tại nhà</span> nhanh chóng & uy tín</h2>
+      <ul>
+        <li>✅ Hơn 500 khách hàng hài lòng</li>
+        <li>⚙️ Phục vụ 24/7 – Có mặt trong 30 phút</li>
+        <li>💰 Giá rõ ràng, bảo hành chu đáo</li>
+      </ul>
+      <a class="btn-call" href="tel:0909123456">📞 Gọi ngay: 0909 123 456</a>
+    </div>
     <img src="images/thodien.png" alt="Thợ điện nước 24/7" />
-    <p>Chúng tôi chuyên nhận:</p>
-    <ul>
-      <li>🔌 Sửa chữa điện dân dụng, thay ổ cắm, công tắc</li>
-      <li>🚰 Sửa ống nước, vòi nước, máy bơm</li>
-      <li>💡 Lắp đặt đèn chiếu sáng, quạt trần, máy nước nóng</li>
-      <li>🧰 Dịch vụ tận nơi – có mặt chỉ sau 30 phút</li>
-    </ul>
+  </section>
 
-    <a class="btn-call" href="tel:0909123456">📞 Gọi ngay: 0909 123 456</a>
+  <div class="form-container">
+    <h3>📋 Đặt lịch sửa chữa nhanh</h3>
+    <form id="bookingForm">
+      <input type="text" id="name" placeholder="Họ và tên" required />
+      <input type="tel" id="phone" placeholder="Số điện thoại" required />
+      <textarea id="problem" rows="3" placeholder="Mô tả sự cố cần sửa..." required></textarea>
+      <button type="submit" class="btn-submit">Gửi yêu cầu</button>
+    </form>
   </div>
 
   <footer>
@@ -133,5 +203,19 @@
     <a class="messenger" href="https://m.me/yourpage" target="_blank" title="Messenger">💭</a>
     <a class="maps" href="https://maps.google.com/?q=Điện+Nước+24/7" target="_blank" title="Xem bản đồ">📍</a>
   </div>
+
+  <script>
+    // Xử lý form gửi qua Zalo hoặc Gmail
+    document.getElementById("bookingForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const name = document.getElementById("name").value;
+      const phone = document.getElementById("phone").value;
+      const problem = document.getElementById("problem").value;
+
+      const message = `📋 Đặt lịch sửa chữa mới:%0A👤 Họ tên: ${name}%0A📞 SĐT: ${phone}%0A🔧 Sự cố: ${problem}`;
+      const zaloURL = `https://zalo.me/0909123456?text=${message}`;
+      window.open(zaloURL, "_blank");
+    });
+  </script>
 </body>
 </html>
