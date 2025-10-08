@@ -197,12 +197,39 @@
     Liên hệ: <a href="mailto:hotro@diennuoc247.vn">hotro@diennuoc247.vn</a>
   </footer>
 
-  <!-- Nút nổi -->
-  <div class="floating-buttons">
-    <a class="zalo" href="https://zalo.me/0909123456" target="_blank" title="Chat Zalo">💬</a>
-    <a class="messenger" href="https://m.me/yourpage" target="_blank" title="Messenger">💭</a>
-    <a class="maps" href="https://maps.google.com/?q=Điện+Nước+24/7" target="_blank" title="Xem bản đồ">📍</a>
-  </div>
+  /* Nút nổi góc phải */
+.floating-buttons {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 100;
+}
+
+.floating-buttons a {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 22px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.floating-buttons a:hover {
+  transform: scale(1.1);
+}
+
+.zalo { background-color: #0068ff; }
+.messenger { background-color: #0084ff; }
+.maps { background-color: #34a853; }
+
 
   <script>
     // Xử lý form gửi qua Zalo hoặc Gmail
