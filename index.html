@@ -12,6 +12,38 @@
       margin: 0;
       padding: 0;
     }
+/* Nút nổi góc phải */
+.floating-buttons {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 100;
+}
+
+.floating-buttons a {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 22px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.floating-buttons a:hover {
+  transform: scale(1.1);
+}
+
+.zalo { background-color: #0068ff; }
+.messenger { background-color: #0084ff; }
+.maps { background-color: #34a853; }
 
     header {
       background-color: #007bff;
@@ -246,3 +278,4 @@
   </script>
 </body>
 </html>
+
